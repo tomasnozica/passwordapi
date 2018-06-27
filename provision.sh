@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e 
+
 sudo apt-get update
 
 # Install Node
@@ -9,7 +11,7 @@ sudo apt-get install -y nodejs
 
 # Install htop
 sudo apt-get install -y htop
-sudo apt-get install linux-tools-`uname -r`
+sudo apt-get install -y linux-tools-`uname -r`
     
 # app installation
 cd /opt
