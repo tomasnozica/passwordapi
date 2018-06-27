@@ -2,10 +2,12 @@
 
 set -e 
 
+# Install prerequisites
 sudo apt-get update
+sudo apt-get install -y git
+sudo apt-get install -y build-essential
 
 # Install Node
-sudo apt-get install -y build-essential
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
@@ -19,4 +21,4 @@ sudo git clone https://github.com/auth0-eng-camp/passwordapi.git
 cd passwordapi
 sudo npm install
 sudo cp passwordapi.conf /etc/init
-sudo service password start
+sudo service passwordapi start
