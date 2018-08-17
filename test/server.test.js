@@ -11,13 +11,13 @@ after(function () {
 });
 
 describe('GET /', () => {
-  it('should respond with content-type application/json', (done) => {
+  it('should respond with documentation', (done) => {
     chai.request(server)
     .get('/')
     .end((err, res) => {
       should.not.exist(err);
       res.status.should.equal(200);
-      res.type.should.equal('application/json');
+      res.type.should.equal('text/html');
       done();
     });
   });

@@ -1,0 +1,112 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a simple API that provides Password-related features.",
+    "version": "1.0.0",
+    "title": "Password API",
+    "contact": {
+      "email": "nicopaez@auth0.com"
+    },
+    "license": {
+      "name": "MIT",
+    }
+  },
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/valid": {
+      "get": {
+        "summary": "Validates if a given password meets the strenght requirements",
+        "operationId": "valid",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "password",
+            "in": "query",
+            "description": "the password to validate",
+            "required": true,
+            "type": "string",
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/hash": {
+      "get": {
+        "summary": "Generates a hash given a plain password",
+        "operationId": "hash",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "password",
+            "in": "query",
+            "description": "the password to hash",
+            "required": true,
+            "type": "string",
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/check-match": {
+      "get": {
+        "summary": "Check if a hash corresponds to a given plain password",
+        "operationId": "check-match",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "password",
+            "in": "query",
+            "description": "the password to check",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "hash",
+            "in": "query",
+            "description": "the hash to check",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/password": {
+      "get": {
+        "summary": "Generates a valid password",
+        "operationId": "password",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    }
+  }
+}
