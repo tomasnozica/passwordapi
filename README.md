@@ -1,4 +1,6 @@
-# Scalability Camp: Password App
+# Scalability Workshop: Password API
+
+[![Build Status](https://travis-ci.org/auth0-eng-camp/passwordapi.svg?branch=master)](https://travis-ci.org/auth0-eng-camp/passwordapi)
 
 Password API provides the following features:
 
